@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seleccion</title>
+</head>
+
+<link rel="stylesheet" type="text/css" href="/login.css">
+
+<header>
+
+    
+</header>
+<body>
+
+
+
+
+
+    
+
+        <form action="#" th:action="@{/login/pedidos}" method="get" th:object="${usuario}">
+    
+    
+        <div class="container">
+          <h3>¿Qué quieres hacer?</h3>
+         
+         
+          <hr>
+      	
+		<button type="submit" class="registerbtn">Pedidos</button>
+		</form>
+		
+		<form action="#" th:action="@{/login/catalogo}" method="get">
+		
+        <br>
+ 
+
+		<button type="submit" class="registerbtn">Nuevo Pedido</button>
+      
+
+ 
+            
+        </form>
+            
+        <form action="#" th:action="@{/login/logout}" method="get">
+		
+        <br>
+ 
+
+		<button type="submit" class="registerbtn">Cerrar Sesión</button>
+      
+
+ 
+            
+        </form>
+        
+        
+        
+        </div>
+        
+       
+
+
+
+</body>
+
+<footer>
+
+
+   
+</footer>
+
+</html>

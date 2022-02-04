@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+
+<link rel="stylesheet" type="text/css" href="/login.css">
+
+<header>
+
+    
+</header>
+<body>
+
+
+
+
+
+    
+
+    <form action="#" th:action="@{/login/seleccion}" method="post" th:object="${usuario}">
+    
+    
+        <div class="container">
+          <h3>Inicia Sesion</h3>
+         
+         
+          <hr>
+      
+          <label for="usuario"><strong>Usuario</strong></label>
+         <input type="text" th:field="*{user}" placeholder="Enter user">
+   		<span th:if="${#fields.hasErrors('user')}" th:errors="*{user}" id="user-error">Errores</span>
+
+        <br>
+ 
+          <label for="pass"><strong>Contraseña</strong></label>
+          <input type="password" th:field="*{password}" placeholder="Enter pass">
+          <span th:if="${#fields.hasErrors('password')}" th:errors="*{password}" id="password-error">Errores</span>
+          
+      
+
+ 
+            
+            
+            <fieldset>
+            
+            <legend></legend>
+                
+
+            <button type="submit" class="registerbtn">Enviar</button>
+
+        </fieldset>
+        </div>
+        
+       
+      </form>
+
+
+
+</body>
+
+<footer>
+
+
+   
+</footer>
+
+</html>

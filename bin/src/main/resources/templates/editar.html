@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="UTF-8">
+<title>Resumen Pedido</title>
+</head>
+
+<link rel="stylesheet" type="text/css" href="/catalogo.css">
+	<body>
+		
+		
+		<form th:action="@{/login/editar/submit}" method="post" >
+			
+			<div class="container">
+				<h3>Pedido</h3>
+				
+				
+				<div>
+				
+				
+				<table border="2">
+				
+				
+				
+					<tr>
+						<td colspan="3">
+						
+						PEDIDO: <strong th:text="${pedido.id}"></strong> ----> FECHA: 
+						<strong th:text="${pedido.getFecha()}"></strong>
+						
+						</td>
+						
+						
+						
+						
+						
+					
+					</tr>
+					<tr>
+						
+						<td>Producto</td>
+						<td>Cantidad</td>
+						<td>Precio</td>
+						
+			
+					</tr>
+				
+					
+					
+					<tr th:each="producto: ${pedido.listaLineaPedido}">
+					
+						<td th:text="${producto.producto.nombre}">Producto</td>
+						<td><input type="number" name="cantidades" th:value="${producto.cantidad}"></td>
+						<td th:text="${producto.producto.precio}"></td>
+						
+						
+			
+					</tr>
+					<tr>
+					
+					<td>ENVIO</td>
+						
+						<td th:if="${pedido.precioEnvio==0}">Envio Gratis</td>
+						<td th:if="${pedido.precioEnvio==5}">48H</td>
+						<td th:text="${pedido.precioEnvio}"></td>
+						
+					
+					</tr>
+					
+					<tr>
+					
+					<td>TOTAL</td>
+						<td></td>
+						<td th:text="${pedido.totalPedido}"></td>
+						
+					
+					
+				</table>
+				
+				
+				
+			
+				
+				<input type="text" name="direccion" id="direccion" th:value="${pedido.direccion}" placeholder="direccion">
+				<input type="text" name="mail" id="mail" th:value="${pedido.mail}" placeholder="mail">
+				<input type="text" name="tlf" id="tlf" th:value="${pedido.tlf}" placeholder="tlf">
+				<input type="text" name="nombre" id="nombre" th:value="${pedido.nombre}" placeholder="nombre">
+				<input type="text" name="apellidos" id="apellidos" th:value="${pedido.apellidos}" placeholder="apellidos">
+				<input type="hidden" name="idEnviado" id="idEnviado" th:value="${pedido.id}" >
+				
+					
+				
+				
+				<br>
+				</div>
+		
+				
+				
+				
+					
+								
+		<button type="submit" class="registerbtn">Guardar Cambios</button>
+			</div>
+			
+			
+				
+		</form>
+		
+		</body>
+
+	
+</html>

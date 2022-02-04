@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+
+<link rel="stylesheet" type="text/css" href="/catalogo.css">
+	<body>
+		
+			
+			<div class="container">
+				<h3>Catalogo</h3>
+				
+				
+				
+				<div th:each="producto : ${listaProductos}">
+				
+				<hr>
+				<img th:src="${producto.img}" alt="">
+				<br>
+				
+				<form  th:action="@{/login/catalogo}" th:object="${producto2}"  method="post">
+				
+				<label for="morde"><strong th:text="${producto.nombre}"></strong> - <strong th:text="${producto.precio}"></label>
+				
+				<p th:if="${#fields.hasErrors('cantidad')}" th:errors="*{cantidad}">Errores</p>
+				<input type="number" name="morde" id="morde" value="0" th:field="*{cantidad}">
+				<input type="hidden" th:value="${producto.id}"  th:name="id" th:id="id">
+				
+				
+				
+
+				<button type="submit" class="registerbtn">Añadir al carrito</button>
+				
+				<hr>
+			  </form>
+				
+				</div>
+			  
+			  
+		
+				<br><br>
+		
+		
+					
+					
+					<fieldset><br>
+						<form action="#" th:action="@{/login/resumen}" method="post">
+				
+				
+				<button type="submit" class="registerbtn">Resumen Pedido</button>
+		
+				
+		
+				</fieldset>
+				</div>
+				
+			   
+		
+		
+		
+		</body>
+
+	
+</html>

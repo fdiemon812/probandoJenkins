@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="UTF-8">
+<title>FACTURA</title>
+</head>
+
+<link rel="stylesheet" type="text/css" href="/catalogo.css">
+	<body>
+		
+		
+		<form th:action="@{/login/factura/fin}" method="post" >
+			
+			<div class="container">
+				<h3>FACTURA</h3>
+				
+				
+				
+				<table border="2">
+				
+					<tr>
+					
+						<td>Producto</td>
+						<td>Cantidad</td>
+						<td>Precio</td>
+						
+			
+					</tr>
+				
+					<tr th:each="producto: ${listaPedido}">
+					
+						<td th:text="${producto.producto.nombre}">Producto</td>
+						<td th:text="${producto.cantidad}">Cantidad</td>
+						<td th:text="${producto.producto.precio}"></td>
+						
+						
+			
+					</tr>
+				
+					<tr>
+						<td>ENVIO:</td>
+						<td><strong th:text="${gastoEnvio}"></td>
+					</tr>
+					
+					<tr>
+						<td>TOTAL PEDIDO:</td>
+						<td><strong th:text="${total}"></td>
+					</tr>
+				</table>
+				
+				
+				<br>
+				
+				
+					<p>Dirección de envio: <strong th:text="${pedido.direccion}"></strong><br>
+						Nombre: <strong th:text="${pedido.nombre}"></strong><br>
+						Apellidos: <strong th:text="${pedido.apellidos}"></strong><br>
+						Telefono: <strong th:text="${pedido.tlf}"></strong><br>
+						Mail:<strong th:text="${pedido.mail}"></strong><br>
+					
+					
+					
+					</p>
+				
+				
+					
+								
+		<button type="submit" class="registerbtn">Finalizar Pedido</button>
+			</div>
+			
+			
+				
+		</form>
+		
+		</body>
+
+	
+</html>

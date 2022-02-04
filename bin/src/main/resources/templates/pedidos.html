@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="UTF-8">
+<title>Resumen Pedido</title>
+</head>
+
+<link rel="stylesheet" type="text/css" href="/catalogo.css">
+	<body>
+		
+		
+		<form th:action="@{/login/catalogo}" method="get" >
+			
+			<div class="container">
+				<h3>Listado de Pedidos</h3>
+				
+				
+				<div th:each="pedido: ${listaPedidos}">
+				
+				
+				<table border="2">
+				
+				
+				
+					<tr>
+						<td colspan="3">
+						
+						PEDIDO: <strong th:text="${pedido.id}"></strong> ----> FECHA: <strong th:text="${pedido.getFecha()}"></strong>
+						
+						</td>
+						
+						
+						
+						
+						
+					
+					</tr>
+					<tr>
+						
+						<td>Producto</td>
+						<td>Cantidad</td>
+						<td>Precio</td>
+						
+			
+					</tr>
+				
+					
+					
+					<tr th:each="producto: ${pedido.listaLineaPedido}">
+					
+						<td th:text="${producto.producto.nombre}">Producto</td>
+						<td th:text="${producto.cantidad}">Cantidad</td>
+						<td th:text="${producto.producto.precio}"></td>
+						
+						
+			
+					</tr>
+					<tr>
+					
+					<td>ENVIO</td>
+						
+						<td th:if="${pedido.precioEnvio==0}">Envio Gratis</td>
+						<td th:if="${pedido.precioEnvio==5}">48H</td>
+						<td th:text="${pedido.precioEnvio}"></td>
+						
+					
+					</tr>
+					
+					<tr>
+					
+					<td>TOTAL</td>
+						<td></td>
+						<td th:text="${pedido.totalPedido}"></td>
+						
+					
+					</tr>
+					
+					<tr>
+					<td><a th:href="@{/login/editar/{id}(id=${pedido.id})}">Editar</a> - 
+					<a th:href="@{/login/eliminar/{id}(id=${pedido.id})}">Eliminar</a></td>
+					
+					
+					</tr>
+				</table>
+				
+				
+				
+				<br>
+				</div>
+		
+				
+				
+				
+					
+								
+		<button type="submit" class="registerbtn">Nuevo Pedido</button>
+		
+		
+			
+			
+			
+				
+	</form>
+		
+		
+		 <form action="#" th:action="@{/login/logout}" method="get">
+		
+        <br>
+ 
+
+		<button type="submit" class="registerbtn">Cerrar Sesión</button>
+		
+		</form>
+		</div>
+		</body>
+
+	
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="UTF-8">
+<title>Resumen Pedido</title>
+</head>
+
+<link rel="stylesheet" type="text/css" href="/catalogo.css">
+	<body>
+		
+		
+		<form th:action="@{/login/factura}" th:object="${pedido}" method="post" >
+			
+			<div class="container">
+				<h3>Resumen Pedido</h3>
+				
+				
+				
+				<table border="2">
+				
+					<tr>
+					
+						<td>Producto</td>
+						<td>Cantidad</td>
+						<td>Precio</td>
+						
+			
+					</tr>
+				
+					<tr th:each="linea: ${listaPedido}">
+					
+						<td th:text="${linea.producto.nombre}">Producto</td>
+						<td th:text="${linea.cantidad}">Cantidad</td>
+						<td th:text="${linea.producto.precio}"></td>
+						
+						
+			
+					</tr>
+				
+				
+				</table>
+				<label name="gratis" id="gratis">Envio gratis</label>
+				<input type="radio" name="envio" id="gratis" value="0">
+				<br>
+				<label name="envio" id="gratis">48H</label>
+				<input type="radio" name="envio" value="5" checked>
+				
+				<br>
+				
+				
+				<input type="text" name="direccion" id="direccion" th:value="${usuario.direccion}" placeholder="direccion">
+				<input type="text" name="mail" id="mail" th:value="${usuario.mail}" placeholder="mail">
+				<input type="text" name="tlf" id="tlf" th:value="${usuario.tlf}" placeholder="tlf">
+				<input type="text" name="nombre" id="nombre" th:value="${usuario.nombre}" placeholder="nombre">
+				<input type="text" name="apellidos" id="apellidos" th:value="${usuario.apellidos}" placeholder="apellidos">
+				
+					
+				
+					
+				
+				
+					
+								
+		<button type="submit" class="registerbtn">Finalizar Pedido</button>
+			</div>
+			
+			
+				
+		</form>
+		
+		</body>
+
+	
+</html>

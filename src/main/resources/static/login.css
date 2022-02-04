@@ -1,0 +1,260 @@
+
+/* PANTALLAS */
+@media (min-width: 851px) {
+   
+        
+    body {
+        font-family: Arial, Helvetica, sans-serif; /*Tipografia general*/
+        background-color: black;                /*Fondo tras formulario*/
+    }
+
+    form * {
+        box-sizing: border-box;
+    }
+
+    /* Add padding to containers */
+    form  .container {
+        padding: 16px;
+        background-color: rgb(255, 255, 255);
+        margin-left: 20%;
+        margin-right: 20%;
+        
+    }
+
+    /* Formato inputs */
+    form input[type=date],form input[type=time], form input[type=text], form input[type=password], form .alergenos,form  textarea{
+        width: 64%;
+        padding: 15px;
+        margin: 5px 0 5px 0;
+        border: none;
+        background: #f1f1f1;
+        
+    }
+
+
+    form select{
+        
+        width: 64%;
+        padding: 15px;
+        margin: 5px 0 22px 0;
+        border: none;
+        background: #f1f1f1;
+    }
+
+
+    /* Colorea el fondo mientras se escribe */
+    form input[type=date],form input[type=time], form  input[type=text]:focus,form  input[type=password]:focus {
+        background-color: #ddd;
+        outline: none;
+    }
+
+    /* Overwrite default styles of hr */
+    form   hr {
+        border: 1px solid #f1f1f1;
+        margin-bottom: 25px;
+    }
+
+
+    form  br {
+        
+        margin-bottom: 5px;
+    }
+
+    /* Botón de reserva */
+    form  .registerbtn {
+        background-color: #04AA6D;
+        color: white;
+        padding: 16px 20px;
+        margin: 8px 0;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+        opacity: 0.9;
+    }
+
+    form  .registerbtn:hover {
+        opacity: 1;
+    }
+
+    /* Terminos y condiciones-link azul */
+    form  a {
+        color: dodgerblue;
+    }
+
+
+    form  #divAlerg{
+        
+        display: flex;
+        align-items: center;
+        
+    }
+
+    form textarea{
+
+
+        width: 64%;
+    }
+
+
+    form .divRadio{
+        display: inline-block;
+        
+    }
+
+
+    form .place{
+        
+        background-color: brown;
+    }
+
+   
+
+
+
+
+
+
+    form  label{
+    display: inline-block;
+
+    width: 155px;
+
+    }
+
+    form  fieldset label{
+    display: inline;
+
+    }
+
+
+}
+
+
+
+
+/* TABLETS */
+@media  (max-width: 850px) {
+
+
+    body {
+        font-family: Arial, Helvetica, sans-serif; /*Tipografia general*/
+        background-color: black;                /*Fondo tras formulario*/
+    }
+
+    form  * {
+        box-sizing: border-box;
+    }
+
+    /* Add padding to containers */
+    form  .container {
+        padding: 6px;
+        background-color: rgb(255, 255, 255);
+        margin-left: 15%;
+        margin-right: 15%;
+        
+    }
+
+    /* Formato inputs */
+    form input[type=text], form input[type=date],form input[type=time], form input[type=password], form .alergenos,form  textarea{
+        width: 100%;
+        padding: 15px;
+        
+        margin: 5px 0 22px 0;
+        border: none;
+        background: #f1f1f1;
+        
+    }
+
+
+    form select{
+        
+        width: 100%;
+        padding: 15px;
+        margin: 5px 0 22px 0;
+        border: none;
+        background: #f1f1f1;
+    }
+
+
+    /* Colorea el fondo mientras se escribe */
+    form input[type=date],form input[type=time], form  input[type=text]:focus, form input[type=password]:focus {
+        background-color: #ddd;
+        outline: none;
+    }
+
+    /* Overwrite default styles of hr */
+    form  hr {
+        border: 1px solid #f1f1f1;
+        margin-bottom: 25px;
+    }
+
+
+    form br {
+        
+        margin-bottom: 5px;
+    }
+
+    /* Botón de reserva */
+    form  .registerbtn {
+        background-color: #04AA6D;
+        color: white;
+        padding: 16px 20px;
+        margin: 8px 0;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+        opacity: 0.9;
+    }
+
+    form .registerbtn:hover {
+        opacity: 1;
+    }
+
+    /* Terminos y condiciones-link azul */
+    form   a {
+        color: dodgerblue;
+    }
+
+
+    form #divAlerg{
+        
+        display: block;
+        align-items: center;
+        
+    }
+
+    
+    
+    form textarea{
+        
+        
+        width: 100%;
+    }
+    
+    
+    form  label{
+        display: inline-block;
+        text-align: center;
+        width: 100%;
+        
+    }
+    form .divRadio{
+       text-align: center;
+    }
+
+    form .divRadio label{
+        display: inline-table;
+        width: 10px;
+        text-align: center;
+        
+    }
+    
+    form fieldset label{
+    display: inline;
+
+    }
+
+
+
+
+}
